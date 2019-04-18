@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#177A96</color>
+    <color name="colorPrimary">#20BCDB</color>
     <color name="colorPrimaryDark">#113F59</color>
     <color name="colorAccent">#d54f58</color>
     <color name="colorBack">#f6f9fa</color>
@@ -11,7 +11,7 @@
     <color name="colorWhite">#ffffff</color>
     <color name="colorGrey">#dcdcdc</color>
     <color name="colorBlack">#000000</color>
-
+    <color name="colorToolBar">#5ABCA4</color>
     <color name="radio_button_selected_color">#ff33b5e5</color>
     <color name="radio_button_unselected_color">@android:color/transparent</color>
 
