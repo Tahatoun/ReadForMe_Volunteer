@@ -1,0 +1,75 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "ensias.readforme_volunteer"
+        minSdkVersion 22
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+            // these platforms cover 99% percent of all Android devices
+
+        }
+        externalNativeBuild {
+            cmake {
+                arguments '-DANDROID_PLATFORM=android-21', '-DANDROID_TOOLCHAIN=clang', '-DANDROID_ARM_NEON=TRUE', '-DANDROID_STL=gnustl_static'
+                cFlags '-O3', '-fsigned-char', '-DSTDC_HEADERS'
+                // full optimization, char data type is signed
+                cppFlags '-fsigned-char', '-DSTDC_HEADERS'
+            }
+        }
+        sourceSets.main {
+            jni.srcDirs = []
+            jniLibs.srcDirs = ['src/main/jni', 'src/main/jni/libmp3lame']
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    externalNativeBuild {
+        cmake {
+            path "src/main/jni/CMakeLists.txt"
+        }
+    }
+
+}
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.github.dmytrodanylyk.android-process-button:library:1.0.4'
+    implementation 'com.basgeekball:awesome-validation:4.1'
+    implementation 'de.hdodenhof:circleimageview:2.1.0'
+    implementation 'info.hoang8f:android-segmented:1.0.6'
+    implementation 'com.soundcloud.android:android-crop:1.0.1@aar'
+    implementation 'com.github.kaedea:Android-Cloud-TagView-Plus:b546a5f073'
+    implementation 'com.balysv:material-ripple:1.0.2'
+    implementation 'com.github.jd-alexander:LikeButton:0.2.1'
+    implementation 'com.yalantis:contextmenu:1.0.7'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support:cardview-v7:26.1.0'
+    implementation 'es.voghdev.pdfviewpager:library:1.0.3'
+    implementation  'com.github.clans:fab:1.6.2'
+
+
+    testImplementation 'junit:junit:4.12'
+}
