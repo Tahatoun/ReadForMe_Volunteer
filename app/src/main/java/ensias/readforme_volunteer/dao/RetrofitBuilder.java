@@ -14,7 +14,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Created by Idriss on 14/07/2017.
+ * Created by Taha on 14/07/2017.
  */
 
 public class RetrofitBuilder {
@@ -24,7 +24,7 @@ public class RetrofitBuilder {
 
     //private static final String BASE_URL="http://192.168.43.243:8000/api/v1/";
 
-    private static final String BASE_URL="http://192.168.43.28:8000/api/v1/";
+    private static final String BASE_URL="http://192.168.43.177:8000/api/v1/";
 
     public static OkHttpClient getClient() {
         return client;

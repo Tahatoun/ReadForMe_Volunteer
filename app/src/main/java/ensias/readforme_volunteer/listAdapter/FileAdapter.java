@@ -1,40 +1,40 @@
 package ensias.readforme_volunteer.listAdapter;
 
 
-import android.app.Activity;
-import android.content.Intent;
-import android.media.MediaPlayer;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AbsListView;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+        import android.app.Activity;
+        import android.content.Intent;
+        import android.media.MediaPlayer;
+        import android.util.Log;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.widget.AbsListView;
+        import android.widget.ArrayAdapter;
+        import android.widget.ImageView;
+        import android.widget.ListView;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import com.like.LikeButton;
-import com.like.OnLikeListener;
-import com.squareup.picasso.Picasso;
+        import com.like.LikeButton;
+        import com.like.OnLikeListener;
+        import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Locale;
+        import java.io.IOException;
+        import java.util.ArrayList;
+        import java.util.LinkedList;
+        import java.util.List;
+        import java.util.Locale;
 
-import ensias.readforme_volunteer.ProfileActivity;
-import ensias.readforme_volunteer.R;
-import ensias.readforme_volunteer.dao.ImageTransformation;
-import ensias.readforme_volunteer.dao.Util;
-import ensias.readforme_volunteer.model.File;
-import ensias.readforme_volunteer.model.Playlist;
-import ensias.readforme_volunteer.model.Volunteer;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+        import ensias.readforme_volunteer.ProfileActivity;
+        import ensias.readforme_volunteer.R;
+        import ensias.readforme_volunteer.dao.ImageTransformation;
+        import ensias.readforme_volunteer.dao.Util;
+        import ensias.readforme_volunteer.model.File;
+        import ensias.readforme_volunteer.model.Playlist;
+        import ensias.readforme_volunteer.model.Volunteer;
+        import retrofit2.Call;
+        import retrofit2.Callback;
+        import retrofit2.Response;
 
 public class FileAdapter extends ArrayAdapter<File>  {
     private  ArrayList<File> suggestions;
@@ -107,10 +107,10 @@ public class FileAdapter extends ArrayAdapter<File>  {
                 suggestionView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = new Intent(context, ProfileActivity.class);
+                        /*Intent intent = new Intent(context, ProfileActivity.class);
                         intent.putExtra("currentVolunteer",volunteer);
                         intent.putExtra("File", suggestion);
-                        context.startActivityForResult(intent, 1);
+                        context.startActivityForResult(intent, 1);*/
                     }
                 });
             }
@@ -145,8 +145,10 @@ public class FileAdapter extends ArrayAdapter<File>  {
                         .placeholder(R.mipmap.ic_camera)
                         .error(R.mipmap.ic_camera)
                         .into(picture);
+                picture.setImageResource(R.drawable.livre);
             }else {
                 picture.setImageResource(R.mipmap.ic_camera);
+                picture.setImageResource(R.drawable.livre);
             }
             /*if(post.getImage() == null) trackImage.setVisibility(View.GONE);
             else{
