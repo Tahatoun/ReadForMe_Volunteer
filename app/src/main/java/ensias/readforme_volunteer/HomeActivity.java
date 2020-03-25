@@ -322,6 +322,7 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
         MenuObject myProfile = new MenuObject("Profile");
         myProfile.setResource(R.drawable.ic_profile);
 
+        MenuObject send2 = new MenuObject("Playlist");
         MenuObject send = new MenuObject("Playlist");
         send.setResource(R.drawable.ic_playlist_colored);
 
