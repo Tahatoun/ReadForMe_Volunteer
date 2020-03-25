@@ -55,6 +55,7 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
     Call<Home> profileCall;
     Call<Volunteer> profileCall2;
     ArrayList<File> posts;
+    ArrayList<Integer> addedByMe;
     Home home;
     Volunteer volunteer;
     FileAdapter adapter;
