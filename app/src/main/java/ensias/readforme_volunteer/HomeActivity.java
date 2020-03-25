@@ -315,7 +315,7 @@ public class HomeActivity extends AppCompatActivity implements OnMenuItemClickLi
     }
     private List<MenuObject> getMenuObjects() {
         List<MenuObject> menuObjects = new ArrayList<>();
-
+		List<Integer> taha = new ArrayList<>();
         MenuObject close = new MenuObject();
         close.setResource(R.drawable.ic_close);
 
